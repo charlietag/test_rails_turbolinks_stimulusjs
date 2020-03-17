@@ -1,24 +1,41 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Try rails frontend feature : Stimulus + jQuery
 
 Things you may want to cover:
 
 * Ruby version
+  * 2.6.0
 
-* System dependencies
+* Rails version
+  * 6.0.2.1
 
-* Configuration
+* Gems
+  * default
 
-* Database creation
+* Built-in features
+  * Stimulus
+    * Install stimulus
+      * `bin/rails webpacker:install:stimulus`
+      * test_rails_turbolinks_stimulusjs/app/javascript/packs/application.js
 
-* Database initialization
+        ```bash
+        import "controllers"
+        ...
+        ```
 
-* How to run the test suite
+  * jQuery
+    * Install jQuery
+      * yarn add jquery
+      * test_rails_turbolinks_stimulusjs/app/javascript/packs/application.js
 
-* Services (job queues, cache servers, search engines, etc.)
+        ```bash
+        import "jquery/src/jquery"
+        ...
+        ```
 
-* Deployment instructions
+* Scaffold a temp form to test
+  * bin/rails g scaffold Book name:string author:string
 
-* ...
+* Changes
+  * https://github.com/charlietag/test_rails_aasm/compare/v0.0.0...master

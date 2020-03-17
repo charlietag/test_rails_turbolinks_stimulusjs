@@ -10,6 +10,82 @@
   </head>
 
   <body>
+    <div data-controller="tryme">
+      <p data-action="click->tryme#getNow">TryClickMe</p>
+      <span data-target="tryme.name"></span>
+    </div>
+
+    <hr>
+
+    <p id="click_me">ClickMe</p>
+    <div id="test"></div>
+
+    <hr>
+
     <%= yield %>
+    <script>
+      // ------------------------------------------------------------------------------------------------------------------
+      //   Using html append is not good example for this test.
+      //  Use window.alert instead !!
+      // ------------------------------------------------------------------------------------------------------------------
+      //function get_date(){
+      //  var n = n || 1
+      //  var date = new Date()
+      //  dataValues = [
+      //     date.getHours(),
+      //     date.getMinutes(),
+      //     date.getSeconds(),
+      //     date.getMilliseconds(),
+      //  ]
+
+      //  var y = dataValues.join(":")
+      //    //$(
+      //      $("#test").append("("+n+"):"+y+"<br>")
+      //    // )
+      //  n = (n + 1)
+      //}
+
+      // ----------------------------------------------------------------------------------------------------------------------------
+      // --- Render 2 times (render cache, evaluate cached js, evaluate reponsed js), not normal ---
+      // - render double times everytime click A href -
+      // ----------------------------------------------------------------------------------------------------------------------------
+
+      //$(document).on("turbolinks:load", function() {
+      //  get_date()
+      //})
+
+      // --- The same trigger as above "turbolinks:load" , both are binding with an event ---
+      //$(document).on("click", "#click_me", function() {
+      //    get_date()
+      //  //  //$(this).slideUp()
+      //})
+
+      // ----------------------------------------------------------------------------------------------------------------------------
+      // --- Render 1 time (render cached content + evaluate fetched js ---
+      // --- The following methods are reults in the same results. ---
+      // ----------------------------------------------------------------------------------------------------------------------------
+      
+      // --- METHOD 1 ---
+      //$("#click_me").click(function() {
+      //  get_date()
+      ////  //$(this).slideUp()
+      //})
+
+      // Ref. https://github.com/turbolinks/turbolinks#installing-javascript-behavior
+      // ----------------------
+      //You may be used to installing JavaScript behavior in response to the window.onload, DOMContentLoaded, or jQuery ready events. With Turbolinks, these events will fire only in response to the initial page load, not after any subsequent page changes. We compare two strategies for connecting JavaScript behavior to the DOM below.
+      // ----------------------
+
+
+      // --- METHOD 2 ---
+      // --- Because turbolinks overides $(document).ready()
+      //get_date()
+      //window.alert('a')
+
+      //$(document).ready(
+      //  get_date()
+      //)
+
+    </script>
   </body>
 </html>
