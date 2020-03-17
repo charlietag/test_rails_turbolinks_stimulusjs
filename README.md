@@ -38,4 +38,4 @@ Things you may want to cover:
   * bin/rails g scaffold Book name:string author:string
 
 * Changes
-  * https://github.com/charlietag/test_rails_aasm/compare/v0.0.0...master
+  * https://github.com/charlietag/test_rails_turbolinks_stimulusjs/compare/v0.0.0...master
