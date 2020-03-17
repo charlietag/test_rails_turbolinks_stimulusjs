@@ -31,6 +31,10 @@
 //})
 
 // It's weired that stimulus cannot work with turbolinks:load ---> Maybe this is extract to connect() function
+// compare with : https://github.com/charlietag/test_rails_turbolinks_stimulusjs/blob/master/app/javascript/myjs/index.js
+
+
+
 // But pure JS as below is OK
 $(document).on("turbolinks:load", function() {
   $("#click_me").click(function() {
