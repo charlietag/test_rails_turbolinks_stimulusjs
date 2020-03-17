@@ -36,12 +36,15 @@
 
 
 // But pure JS as below is OK
+// add the single line as below, will cause nothing happen.  it's just like add turbolinks:load in stimulus controller
+//$(document).on("turbolinks:load", function() {
 $(document).on("turbolinks:load", function() {
   $("#click_me").click(function() {
     //get_date()
     window.alert('b')
   })
 })
+//})
 
 //$(document).on('click', '#click_me', function() {
   //get_date()

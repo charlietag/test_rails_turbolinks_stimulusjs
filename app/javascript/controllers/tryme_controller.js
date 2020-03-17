@@ -65,6 +65,8 @@ export default class extends Controller {
   //------------------------------------------------------------------
   getNow() {
     // It's weired that stimulus cannot work with turbolinks:load ---> Maybe this is extract to connect() function
+    //If I add this single line as below, it's just like adding this line twice (stimulus help you to add this line in connect() )
+    // compare with https://github.com/charlietag/test_rails_turbolinks_stimulusjs/blob/master/app/javascript/myjs/index.js
     //$(document).on("turbolinks:load", function() {
       window.alert('b')
     //}
